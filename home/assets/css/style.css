@@ -7,11 +7,13 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: hsl(220, 24%, 12%);
+  --black-color: rgb(0,0,0);/* hsl(220, 24%, 12%);*/
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
-  --body-color: hsl(220, 100%, 97%);
+  --gray-color: #a3a3a3;
+  /* --body-color: hsl(220, 100%, 97%); */
+  --body-color: #fcfaf5;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -43,9 +45,12 @@
 }
 
 body {
+  margin: 0; /* デフォルトのマージンを削除 */
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
+  min-height: 100vh; /* 画面の高さいっぱいに表示 */
+  padding-top: var(--header-height); /* ヘッダーの高さに合わせた余白を追加 */
 }
 
 ul {
@@ -54,17 +59,23 @@ ul {
   /*-webkit-tap-highlight-color: transparent;*/
 }
 
-a {
+a :not(call,foot__mail){
   text-decoration: none;
 }
+a:hover {
+  color: var(--white-color); /* カーソルを当てた時のテキストの色 */
+}
+
 div i:not(.ri-map-pin-2-fill) {
   font-style: normal;
 }
+
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
+  flex: 1; /* コンテンツ部分がフリーサイズになるように */
 }
 
 /*=============== HEADER ===============*/
@@ -73,8 +84,9 @@ div i:not(.ri-map-pin-2-fill) {
   top: 0;
   left: 0;
   width: 100%;
-  background-color:  rgba(0,0,0,0.9);
-  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  background-color: black;
+  box-shadow:0 2px 16px pink ;
+   /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);  */
   z-index: var(--z-fixed);
 }
 
@@ -160,7 +172,7 @@ div i:not(.ri-map-pin-2-fill) {
 }
 
 .nav__link,.nav__link2 {
-  color: var(--white-color);
+  color: var(--gray-color);
   background-color: var(--black-color);
   font-weight: var(--font-semi-bold);
   padding: 1.25rem 1.5rem;
@@ -172,20 +184,23 @@ div i:not(.ri-map-pin-2-fill) {
 }
 
   .nav__link:hover {
-	background-color: var(--black-color-light);
+    /* 背景色を変更しないようにする */
+  background-color: initial !important;
 	text-decoration: underline;
 	text-underline-position : under;/* アンダーラインを少し下にずらす */
 	text-decoration-color: var(--white-color);
 	text-decoration-thickness: 2px;
   }
 .nav__link2:hover {
-	background-color: var(--black-color-light);
+/* 背景色を変更しないようにする */
+background-color: initial !important;
+color: var(--white-color); /* カーソルを当てた時のテキストの色 */
   }
 
 /* Show menu */
 .show-menu {
   opacity: 1;
-  top: 3.5rem;
+  top: 2.5rem;
   pointer-events: initial;
 }
 
@@ -212,8 +227,8 @@ div i:not(.ri-map-pin-2-fill) {
 
 .dropdown__link {
   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
-  color: var(--white-color);
-  background-color: var(--black-color-light);
+  color: var(--gray-color);
+  background-color: var(--black-color);
   display: flex;
   align-items: center;
   column-gap: .5rem;
@@ -227,7 +242,8 @@ div i:not(.ri-map-pin-2-fill) {
 }
 
 .dropdown__link:hover {
-  background-color: var(--black-color);
+  background-color: var(--black-color-light);
+  
   text-decoration: underline;
   text-underline-position : under;/* アンダーラインを少し下にずらす */
   text-decoration-color: var(--white-color);
@@ -235,7 +251,8 @@ div i:not(.ri-map-pin-2-fill) {
 }
 
 .dropdown__menu {
-  max-height: 0;
+  max-height: 0; /* メニューを初期状態では非表示にする */
+  /* top: 5rem; */
   overflow: hidden;
   transition: max-height .4s ease-out;
 }
@@ -255,10 +272,13 @@ div i:not(.ri-map-pin-2-fill) {
 @media screen and (max-width: 340px) {
   .container {
     margin-inline: 1rem;
+   
   }
 
   .nav__link,.nav__link2 {
     padding-inline: 1rem;
+    background-color: black;
+    
   }
 }
 
@@ -269,7 +289,7 @@ div i:not(.ri-map-pin-2-fill) {
   }
 
   .nav {
-    height: calc(var(--header-height) + 2rem);
+    height: var(--header-height) ;
     display: flex;
     justify-content: space-between;
   }
@@ -288,7 +308,8 @@ div i:not(.ri-map-pin-2-fill) {
     column-gap: .25rem;
   }
   .nav__link:hover {
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: var(--black-color-light);
   }
 
   .dropdown__item {
@@ -300,7 +321,7 @@ div i:not(.ri-map-pin-2-fill) {
     overflow: initial;
     position: absolute;
     left: 0;
-    top: 6rem;
+    top: 4rem;
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s, top .3s;
@@ -319,7 +340,7 @@ div i:not(.ri-map-pin-2-fill) {
   /* Show dropdown menu */
   .dropdown__item:hover .dropdown__menu {
     opacity: 1;
-    top: 8.5rem;   /*밑우로*/
+    top: var(--header-height);   /*밑우로*/
     pointer-events: initial;
     transition: top .3s;
   }
@@ -328,18 +349,18 @@ div i:not(.ri-map-pin-2-fill) {
 /*=============== FOOTER ===============*/
 
 footer {
-  position: fixed;
+  /* position: absolute; */
   bottom: 0px;
   left: 0;
   width: 100%;
   height: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgb(0,0,0);
   margin-top:2px;  
   font-size: .800rem;
 
 }
 footer .foot__container {
-  color: white;
+  color: var(--gray-color);
   display: flex; /* 追加 */
   justify-content: center; /* 追加 */
 }
@@ -357,11 +378,15 @@ display: inline-block;
 }
 .foot__list a:hover {
   text-decoration: underline;
+
 }
-a, .foot__christ, li, .Copyright{
-  color: white;
-  text-decoration: none; /* アンダーバーを非表示にする */
+a, .foot__christ, .Copyright{
+  color:var(--gray-color);
+   
   list-style-type: none;  /*点非表示*/
+}
+li :not(.foot_mail,.call) {
+  text-decoration: none; /*アンダーバーを非表示にする */
 }
 .foot__christ {
 /* padding-top: 10px;  */
@@ -372,11 +397,13 @@ margin-bottom: 10px;
 .foot__links {
  display: flex; 
   list-style: none;
+
 } 
 .foot__links li {
 text-align: center;
 font-size: 24px;
 padding: 20px 30px;
+
 }
 
 

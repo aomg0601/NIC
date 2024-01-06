@@ -7,8 +7,11 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: hsl(220, 24%, 12%);
-  --black-color-light: hsl(220, 24%, 15%);
+  /* --black-color: hsl(220, 24%, 12%); */
+  --black-color: rgba(0,0,0,0.9);
+  /* --black-color-light: hsl(220, 24%, 15%); */
+  --black-color-light:  rgba(0,0,0,0.8);
+
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
   --body-color: hsl(220, 100%, 97%);
@@ -70,13 +73,15 @@ a {
   left: 0;
   width: 100%;
   background-color: var(--black-color);
-  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3); */
+  /* box-shadow: 0 2px 16px rgba(0,0,0,0.9); */
   z-index: var(--z-fixed);
 }
 
 /*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
+  background-color:none;
 }
 
 .nav__logo, 
@@ -95,7 +100,7 @@ a {
 }
 
 .nav__logo {
-  display: inline-flex;
+  /* display: inline-flex; */
   align-items: center;
   column-gap: .25rem;
   font-weight: var(--font-semi-bold);
@@ -139,13 +144,14 @@ a {
     top: 2.5rem;
     width: 100%;
     height: calc(100vh - 3.5rem);
-    overflow: auto;
+    overflow: auto; /*メニュー内のコンテンツがメニューの高さを超えた場合にスクロール可能に*/
     pointer-events: none;
     opacity: 0;
     transition: top .4s, opacity .3s;
   }
+  /*Webkit系ブラウザ（ChromeやSafariなど）でのスクロールバーを非表示に*/
   .nav__menu::-webkit-scrollbar {
-    width: 0;
+    width: 0; 
   }
 
    .nav__list {
@@ -157,13 +163,13 @@ a {
 
 .nav__link,.nav__link2 {
   color: var(--white-color);
-  background-color: var(--black-color);
+  background-color:var(--black-color);
   font-weight: var(--font-semi-bold);
   padding: 1.25rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color .3s;
+  /* transition: background-color .3s; */
   text-decoration: none;
 }
 
@@ -209,7 +215,7 @@ a {
 .dropdown__link {
   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
   color: var(--white-color);
-  background-color: var(--black-color-light);
+  background-color: var(--black-color);
   display: flex;
   align-items: center;
   column-gap: .5rem;
@@ -223,7 +229,7 @@ a {
 }
 
 .dropdown__link:hover {
-  background-color: var(--black-color);
+  background-color: var(--black-color-light);
   text-decoration: underline;
   text-underline-position : under;/* アンダーラインを少し下にずらす */
   text-decoration-color: var(--white-color);
@@ -282,9 +288,11 @@ a {
     padding: 0;
     justify-content: initial;
     column-gap: .25rem;
+    background-color: var(--black-color);
   }
   .nav__link:hover {
-    background-color: transparent;
+    /* background-color: transparent;/ */
+    background-color:var(--black-color-light);
   }
 
   .dropdown__item {

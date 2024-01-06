@@ -17,7 +17,7 @@
       <header class="header">
          <nav class="nav container">
             <div class="nav__data">
-               <a href="#" class="nav__logo">
+               <a href="./index.html" class="nav__logo">
                   <img id="" src="img/logo4.png"  alt = "Nagoya International Church" width="100" height="100">
                </a>
                
@@ -31,7 +31,7 @@
             <div class="nav__menu" id="nav-menu">
             
                <ul class="nav__list">
-                  <li><a href="#" class="nav__link">ホーム</a></li>
+                  <li><a href="./index.html" class="nav__link">ホーム</a></li>
 
                
                   <!--=============== DROPDOWN 1 ===============-->
@@ -42,13 +42,13 @@
 
                      <ul class="dropdown__menu">
                         <li>
-                           <a href="./introduction1.html" class="dropdown__link">
+                           <a href="./introduction1.html" data-tab="01" class="dropdown__link">
                               教団紹介
                            </a>                          
                         </li>
 
                         <li>
-                           <a href="#" class="dropdown__link">
+                           <a href="./introduction.html/" data-tab="02" class="dropdown__link" >
                               教役者紹介
                            </a>
                         </li>
@@ -88,20 +88,28 @@
             </div>
          </nav>
       </header>
-      <article>
+
+      <!-- ###############CONTAINER############### -->
+      <div class = "container">
+
+      </div>
+
+
+
+
+
+
+      
        
-       
 
-
-
-      </article>
+      
       <footer>
          <div class = "foot__container">                  
                   <div class = "foot__center"> 
                      <ul class = "foot__list">
                          <li><i class="ri-map-pin-2-fill"></i><i>〒454-0852 愛知県名古屋市中川区昭和橋通1丁目2(名古屋国際教会)</i></li>
-                         <li><i class="ri-phone-fill">日本語/韓国語/英語:<a href="tel+81 70 8392 3280" >＋81 70 8392 3280</a></i></li>
-                         <li><i class="ri-phone-fill">中国語:<a href="tel+81 70 8392 3280" >＋81 70 8392 3280</a></i></li>
+                         <li><i class="ri-phone-fill">日本語/韓国語/英語:<a  href="tel+81 70 8392 3280" class = "call">＋81 70 8392 3280</a></i></li>
+                         <li><i class="ri-phone-fill">中国語:<a  href="tel+81 70 8392 3280" class = "call" >＋81 70 8392 3280</a></i></li>
                          <li><i class="ri-mail-fill"><a href="mailto:kros_o0n@naver.com" class = "foot_mail">kros_o0n@naver.com</a></i> </li>  
                          <li class = "Copyright">Copyright © 神の家族キリスト教会 名古屋国際教会 All Rights Reserved.</li>
                          <li class="foot__christ">
@@ -122,5 +130,6 @@
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
+      <script src="assets/js/introduction.js"></script>
    </body>
 </html>
