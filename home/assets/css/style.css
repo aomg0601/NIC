@@ -12,6 +12,7 @@
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
   --gray-color: #a3a3a3;
+  --back-gray: #dee0e1;
   /* --body-color: hsl(220, 100%, 97%); */
   --body-color: #fcfaf5;
 
@@ -48,7 +49,8 @@ body {
   margin: 0; /* デフォルトのマージンを削除 */
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
+  background-color: var(--back-gray);
   min-height: 100vh; /* 画面の高さいっぱいに表示 */
   padding-top: var(--header-height); /* ヘッダーの高さに合わせた余白を追加 */
 }
@@ -429,4 +431,16 @@ padding: 20px 30px;
     width: 100%;
   }
   
+/* top image */
+.top-bg {
+  max-width:100%; /*画面サイズに合わせて*/
+  height: 40vh;
+  background-color: #eee;
+}
+
+
+
+
+
+
 }

@@ -37,6 +37,12 @@ function tabSwitch(e) {
    // クリックされたmenu要素にis-activeクラスを付加
    e.currentTarget.classList.add('is-active');
 
+    let defaultPanel = "01"; // デフォルトで表示したいパネルのdata-panel値を指定
+    if (tabTargetData === "02") {
+      defaultPanel = "02"; // もしクリックされたタブが"02"なら、表示するパネルを"02"に変更
+    }
+
+   
    // クリックしたmenuのデータ属性と等しい値を持つパネルにis-showクラスを付加
    tabPanelItems.forEach((tabPanelItem) => {
      if (tabPanelItem.dataset.panel ===  tabTargetData) {

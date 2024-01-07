@@ -1,3 +1,8 @@
+body {
+    font-family: var(--body-font);
+   font-size: var(--normal-font-size);
+   
+}
 .body__container a{
     text-decoration: none;
     /* color: #b0b0b0; */
@@ -8,9 +13,9 @@
     text-decoration: underline;
     text-underline-position : under;/* アンダーラインを少し下にずらす */
   }
+ 
 
   .tab-container a {
-    color: #888;
     font-size: 1rem;
     padding: 0.7rem 0 0.3rem;
     /* margin: 1.3rem; */
@@ -18,34 +23,100 @@
     width: 10rem;
     text-align: center;
   }
-  a.tab-active {
-    transition: border-width 0.5s;
+  
+.background__image {
+    background-image: url(/home/img/jujika.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.pick {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:100%; /*画面サイズに合わせて*/
+    height: vh;
+    z-index: 0;
+ }
+ /* .pic::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: inherit;
+    filter: blur(10px) brightness(85%);
+    content: '';
+    z-index: -1;
+} */
+/* .top__image {
+    padding: 4rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    background: inherit;
+}
+ */
+
+ .top__image img {
+     
+    display:block;
+   
+    max-width:100%;
+    height: 40vh
   }
+    
 
+  /* top image */
+.top-bg {
+    max-width:100%; /*画面サイズに合わせて*/
+    height: 40vh;
 
-  section.section-active {
-    display: block;
+    /* background-color: #eee; */
+    background-image: url(/home/img/jujika.jpg);
+    
+    background-position: center;
+    position: relative;
+    /* background-color: #eee; */
+    /* background-size: 50%; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-size: cover; */
   }
+ 
+
+  /*画像上の文字*/
+.top__image p {
+    position: absolute;
+    color: #d1d3d3;
+    top: 45%;
+    right: 5%;
+    font-weight: bold;
+    font-size: 2em;
 
 
-  /* 
-   */
+}
 
 
    .tab {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 120px;
+    max-width: 100%;
+    /* margin: 0 auto; */
+    margin: 20 20 20 20;
+    margin-top: 10px;
   }
   
   /* タブメニュー */
   .tab__menu {
     display: flex;
+    font-weight: var(--font-semi-bold);
     align-items: flex-end; /* メニューを下揃え&高さを調整 */
     justify-content: center;
     min-height: 50px; /* メニュー切替時にタブがズレないように */
     padding: 0;
     margin: 0;
+  }
+ 
+  .tab_menu li {
+    color: var(--white-color);
   }
   
   .tab__menu-item {
@@ -53,12 +124,19 @@
     width: 200px;
     padding: 8px 5px; /* メニューに高さを付ける */
     text-align: center;
-    margin-right: 6px;
-    background-color: #cdcdcd;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    margin-right: 50px;/*box 間隔*/
+    background-color: var(--black-color);
+    color: var(--gray-color);
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
     cursor: pointer;
     transition: all .3s; /* アニメーション */
+  }
+  .tab__menu li:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+	text-underline-position : under;/* アンダーラインを少し下にずらす */
+	text-decoration-color: var(--white-color);
   }
   
   .tab__menu-item:last-of-type {
@@ -67,12 +145,15 @@
   
   /* is-activeがついている時のスタイル */
   .tab__menu-item.is-active {
-    background-color: rgba(48, 172, 249);
-    color: #ffffff;
-    padding: 12px 5px;
+    background-color: var(--black-color);
+    text-decoration: underline;
+	text-underline-position : under;/* アンダーラインを少し下にずらす */
+	text-decoration-color: var(--white-color);
+    text-decoration-thickness: 2px;
+    color:var(--white-color);
+    padding: 12px 5px; /*box size*/
   }
-
-
+  
 
   /* タブパネル */
 .tab__panel {
@@ -80,27 +161,53 @@
    }
    
    .tab__panel-box {
-     min-height: 400px; /* テキスト量が多くなっても対応できるように */
-     padding: 10px 30px;
-     border-radius: 10px;
+     /* min-height: 400px; */
+     /* padding: 10px 30px; */
+     padding: 10px;
+     /* border-radius: 10px; */
    }
    
-   .tab__panel-box001 {
-     background-color: rgb(205, 246, 246);
+   .tab__panel-box001, .tab__panel-box002 {
+     /* background-color: var(--white-color); */
+     padding: 50px;
+     /* margin: 10px; */
+     margin-left: 100px;
+     margin-right: 100px;
+     background-color: #eaecec;
      display: none;
-   }
-   
-   .tab__panel-box002 {
-     background-color: rgb(249 227 243);
-     display: none;
-   }
-   
-   .tab__panel-box003 {
-     background-color: rgb(200, 248, 195);
-     display: none;
-   }
-   
+   }   
    /* is-showがついている時のスタイル */
    .tab__panel-box.is-show {
      display: block;
    }
+
+   h3 {
+    margin: 10px;
+    text-decoration: underline;
+    text-underline-position : under;/* アンダーラインを少し下にずらす */
+	text-decoration-color: var(--gray-color);
+    text-decoration-thickness: 4px;
+   }
+
+   .pastor {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+    /* padding-left: 50px; */
+    padding-right: 10px;
+  }
+  
+
+  .item {
+    /* margin-left: 10px;
+    margin-right: 10px; */
+   
+      /* min-width: 150px; アイテムの最小幅を設定 */
+    background-color: lightblue;
+    margin-bottom: 20px; /* 行間を設定 */
+    box-sizing: border-box; /* paddingやborderを要素の幅に含める */
+  }
+.item2, .item4 {
+    padding-left: 40px;
+}
