@@ -104,8 +104,8 @@ div i:not(.ri-map-pin-2-fill) {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
-  box-shadow:0 2px 16px pink ;
+  background-color: var(--black-color);
+  box-shadow:0 2px 16px var(--gray-color); /*影*/
    /* box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);  */
   z-index: var(--z-fixed);
 }
@@ -415,6 +415,11 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   /* order: 1; */
 }
 /*=============== BODY ===============*/
+
+.church__label{
+  margin: 100px;
+}
+
 /*集会案内、宣教活動body*/
 .reihai, .denndou{
   padding-top: 50px;
@@ -511,10 +516,6 @@ text-decoration-color: var(--border-color);
     /* background: var(--back-gray); */
     border-bottom: solid 3px var(--border-color);/*下線*/
 }
-
-
-
-
 
 /*=============== FOOTER ===============*/
 

@@ -33,8 +33,7 @@
             font-weight:bold ;
             color: var(--white-color);
             text-align: center;
-            
-            
+            font-family: 'Geologica', sans-serif;
          }
          .screen__massage .p {
             width: 100%;
@@ -51,18 +50,18 @@
          }
          .full__screen div .main1 {
             background-image: url(/home/img/praise.jpg);
-            filter: grayscale(100%);
-            filter: saturate(0%);
+            filter: grayscale(50%);
+            /* filter: saturate(0%); */
          }
          .full__screen div .main2 {
             background-image: url(/home/img/praise2.jpg);
-            filter: grayscale(100%);
-            filter: saturate(0%);
+            filter: grayscale(50%);
+            /* filter: saturate(0%); */
          }
          .full__screen div .main3 {
             background-image: url(/home/img/praise5.jpg);
-            filter: grayscale(100%);
-            filter: saturate(0%);
+            filter: grayscale(50%);
+            /* filter: saturate(0%); */
 
          }
          /*ドットを画像の下に配置*/
@@ -94,12 +93,37 @@
             background:var(--dot-color);
         }
 
+        /**/
+        /* ul{
+  margin: 0;
+} */
+.Infiniteslide img{
+  height: 200px;
+  filter: grayscale(20%);
+    filter: saturate(70%);
+}
+
+/* .Infiniteslide p{
+  margin: 0;
+  background-color: pink;
+} */
+/* 
+        .infiniteslide img {
+         width: 100%;
+         
+         height: 30vh;
+      } */
+
+
       </style>
 
       <!-- =============== SCRIPT =============== -->
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+      <!-- =============== INFINITE SCRIPT =============== -->
+      <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+      <!-- <script src="infiniteslidev2.js"></script> -->
 
       <!-- =============== FULL SCREEN .JS =============== -->
       <script>
@@ -125,22 +149,40 @@
                autoplaySpeed: 0, //自動再生のスライド切り替えまでの時間を設定
                speed: 5000, //スライドが流れる速度を設定
                cssEase: "linear", //スライドの流れ方を等速に設定
-               slidesToShow: 3.5, //表示するスライドの数
+               slidesToShow: 5, //表示するスライドの数
                swipe: false, // 操作による切り替えはさせない
                arrows: false, //矢印非表示
                pauseOnFocus: false, //スライダーをフォーカスした時にスライドを停止させるか
                pauseOnHover: false, //スライダーにマウスホバーした時にスライドを停止させるか
                rtl: true,
                responsive: [{
+                  breakpoint: 1024,
+                  settings: {
+                     slidesToShow: 4, //画面幅750px以下でスライド3枚表示
+                  }
+               },
+
+               {
                   breakpoint: 750,
                   settings: {
                      slidesToShow: 3, //画面幅750px以下でスライド3枚表示
                   }
+                  
                }
                ]
             });
          });
       </script>
+      <!-- <script>
+      $(function(){
+         $('.infiniteslide').infiniteslide({
+            speed: 200,
+            responsive: true,
+            Type:integral,
+         });
+         });
+</script> -->
+
    </head>
    <body>
       <!--=============== HEADER ===============-->
@@ -232,23 +274,61 @@
          <div class = "main2" ><p>名古屋国際教会</p></div>
          <div class = "main3" ><p>Nagoya International Comunity</p></div>
         </div>
+        <div class="church__label">
+         <div>
+            <p>text</p>
+         </div>
+
+        </div>
+        <!--テキスト& 画像-->
+        <div class="Infiniteslide">
+         <div class="item">
+            <!-- <p>アイテム①</p> -->
+            <img src="img/child1.jpg" alt="item1">
+         </div>
+         <div class="item">
+            <!-- <p>アイテム②</p> -->
+            <img src="img/child2.jpg" alt="item2">
+         </div>
+         <div class="item">
+            <!-- <p>アイテム③</p> -->
+            <img src="img/child3.jpg" alt="item3">
+         </div>
+         <div class="item">
+            <!-- <p>アイテム③</p> -->
+            <img src="img/child5.jpg" alt="item4">
+         </div>
+         <div class="item">
+            <!-- <p>アイテム③</p> -->
+            <img src="img/child4.jpg" alt="item5">
+         </div>
+         <div class="item">
+            <!-- <p>アイテム③</p> -->
+            <img src="img/child6.jpg" alt="item6">
+         </div>
+      </div>
 
         <div class="home">
          
 
          <!-- 사진 자동 재생 -->
-         <div class="auto__slider" dir="rtl">
-            <div><img src="img/rd1.png" alt="" /></div>
-            <div><img src="img/rd2.png" alt="" /></div>
+         <!-- <div class="auto__slider" dir="rtl">
+            <div><img src="img/jujika.jpg" alt="" /></div>
+            <div><img src="img/praise2.jpg" alt="" /></div>
             <div><img src="img/rd3.png" alt="" /></div>
             <div><img src="img/rd4.png" alt="" /></div>
             <div><img src="img/hd1.jpg" alt="" /></div>
             <div><img src="img/hd2.jpg" alt="" /></div>
             <div><img src="img/hd3.jpg" alt="" /></div>
-            
-            
+          </div> -->
 
-          </div>
+         
+
+
+
+
+
+         
 
             <h1>礼拝案内</h1>
             <div class="border border-bottom">主日礼拝</div>
