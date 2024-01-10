@@ -1,0 +1,42 @@
+
+
+  /*画像上の文字*/
+/* .background__image p {
+    position: absolute;
+    color: #d1d3d3;
+    top: 75%;
+    right: 5%;
+    /* -ms-transform: translate(-50%,-5%);
+    -webkit-transform: translate(-45%,-5%);
+    transform: translate(-45%,-5%); 
+    font-weight: bold;
+    font-size: 2em;
+    z-index: 2;
+} */
+/* .wrapper .top__container {
+    max-width:100%; /*画面サイズに合わせて
+    height: 40vh;
+    position: relative;
+    top: -100%;
+    z-index: 1;
+
+} */
+
+  /* top image */
+/* .top-bg {
+    max-width:100%; /*画面サイズに合わせて
+    height: 40vh;
+
+    /* background-color: #eee; *
+    background-image: url(/home/img/jujika.jpg);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-size: cover; 
+    z-index: 1;
+  } */
+
+  ul li {
+    padding-right: 5px;
+  }

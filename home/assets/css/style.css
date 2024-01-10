@@ -12,9 +12,13 @@
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
   --gray-color: #a3a3a3;
+  --dot-color:#2e2c2c;
   --back-gray: #dee0e1;
   /* --body-color: hsl(220, 100%, 97%); */
   --body-color: #fcfaf5;
+  --border-color: #7C7C7C;
+  --cursor-text-color:#2C2D2D;
+  --back-color: #eaecec;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -53,7 +57,10 @@ body {
   background-color: var(--back-gray);
   min-height: 100vh; /* 画面の高さいっぱいに表示 */
   padding-top: var(--header-height); /* ヘッダーの高さに合わせた余白を追加 */
+  /* 必要に応じて、テキストが横に折り返されないように設定 */
+  /* white-space: nowrap; */
 }
+
 
 ul {
   list-style: none;
@@ -74,6 +81,17 @@ div i:not(.ri-map-pin-2-fill) {
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/
+.body__container a{
+  text-decoration: none;
+  /* color: #b0b0b0; */
+  color:var(--border-color);
+}
+.body__container a:hover {
+  color: var(--cursor-text-color);/* カーソルを当てた時のテキストの色 */
+  text-decoration: underline;
+  text-underline-position : under;/* アンダーラインを少し下にずらす */
+}
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
@@ -98,6 +116,7 @@ div i:not(.ri-map-pin-2-fill) {
 }
 
 .nav__logo, 
+.center__icon,
 .nav__burger, 
 .nav__close {
   color: var(--white-color);
@@ -130,6 +149,11 @@ div i:not(.ri-map-pin-2-fill) {
   position: relative;
   width: 32px;
   height: 32px;
+}
+.center__icon {
+  font-size: 1.25rem;
+  font-weight: var(--font-semi-bold);
+  /* justify-content: center;  */
 }
 
 .nav__burger, 
@@ -298,6 +322,9 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   .nav__toggle {
     display: none;
   }
+  .center__icon {
+    display:none;
+  }
   .nav__list {
     height: 100%;
     display: flex;
@@ -342,11 +369,152 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   /* Show dropdown menu */
   .dropdown__item:hover .dropdown__menu {
     opacity: 1;
-    top: var(--header-height);   /*밑우로*/
+    top: var(--header-height);   /*밑으로*/
     pointer-events: initial;
     transition: top .3s;
   }
 }
+
+/*=============== TOP IMAGE===============*/
+/* top image */
+.wrapper {
+  position: relative;
+  max-width:100%;
+  height: 40vh;
+  
+}
+.wrapper .style {
+  /* display: block; */
+  align-items: center;
+  justify-content: center;
+  background-size:80% ;
+  background-position: top;
+  max-width:100%;
+  height: 40vh;
+
+} 
+/*背景画像*/
+.blur {
+  position: relative;
+  background: url(/home/img/jujika3.jpg);
+  background-size:80% ;
+  background-position: top;
+  max-width:100%;
+  height: 40vh;
+  z-index: -1;
+  /* filter: blur(3px); */
+}
+ /*画像上の文字*/
+.wrapper  p {
+  position: absolute;
+  color: #d1d3d3;
+  top: 75%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 2em;
+  /* order: 1; */
+}
+/*=============== BODY ===============*/
+/*集会案内、宣教活動body*/
+.reihai, .denndou{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  /* margin: 10px; */
+  margin-top: 20px;
+  margin-left: 120px;
+  margin-right: 120px;
+  background-color: var(--back-color);
+ }
+ /*ホームbody*/
+ .home {
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  /* margin: 10px; */
+  /* margin-top: 20px; */
+  /* margin-left: 120px; */
+  /* margin-right: 120px; */
+  background-color: var(--back-color);
+ }
+ .auto__slider img {
+  width: 100%;
+  /* width: 500px; */
+  height: 30vh;
+ }
+
+
+/*=============== TITLE ===============*/
+  /* 大見出し */
+  .heading {
+    font-size: 1.75rem;
+    font-weight: var(--font-semi-bold);
+    padding-left: 10px;
+  }
+  .border-arrange {
+    
+    width: 150px;
+    padding: 0px;
+    /* margin-bottom: 20px; */
+    border-left: 6px solid var(--border-color);
+    border-bottom:4px solid var(--border-color);
+   }
+
+   h1 {
+    padding: 0.3em;/*文字周りの余白*/
+    /* color: #494949; */
+    background: var(--back-gray);/*背景色*/
+    border-left: solid 5px var(--border-color);/*左線（実線 太さ 色）*/
+  }
+ /* 見出し囲い */
+.border2 {
+  font-size: 1.25rem;
+  width:100%;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: var(--font-semi-bold);
+ }
+ .border-double {
+  border-top: 4px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
+ }
+
+ .border {
+  font-size: 1.25rem;
+  width:100%;
+  padding: 0px;
+  margin: 20px;
+  font-weight: var(--font-semi-bold);
+ }
+ .border-bottom {
+  border-bottom: 4px solid var(--border-color);
+ }
+
+/*見出し下線*/
+ h3 {
+  margin: 10px;
+  text-decoration: underline; /*overline;*/
+  text-underline-position : under;/* アンダーラインを少し下にずらす */
+text-decoration-color: var(--border-color);
+  text-decoration-thickness: 3px;
+ }
+/*小文字見出し*/ /*2文字*/
+  .title {
+    width: 42px;
+    padding: 0px;/*文字周りの余白*/
+    padding-left: 4px;
+    margin-bottom: 10px;
+    color: var(--black-color);/*文字色*/
+    /* background: var(--back-gray); */
+    border-bottom: solid 3px var(--border-color);/*下線*/
+}
+
+
+
+
 
 /*=============== FOOTER ===============*/
 
@@ -430,17 +598,6 @@ padding: 20px 30px;
     justify-content: center; /* アイテムを水平方向に中央揃え */
     width: 100%;
   }
-  
-/* top image */
-.top-bg {
-  max-width:100%; /*画面サイズに合わせて*/
-  height: 40vh;
-  background-color: #eee;
 }
 
-
-
-
-
-
-}
+/*=============== FOOTER ここまで===============*/
