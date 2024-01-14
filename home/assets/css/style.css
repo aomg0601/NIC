@@ -86,7 +86,7 @@ div i:not(.ri-map-pin-2-fill) {
   /* color: #b0b0b0; */
   color:var(--border-color);
 }
-.body__container a:hover {
+.body__container a :hover  {
   color: var(--cursor-text-color);/* カーソルを当てた時のテキストの色 */
   text-decoration: underline;
   text-underline-position : under;/* アンダーラインを少し下にずらす */
@@ -155,7 +155,7 @@ div i:not(.ri-map-pin-2-fill) {
   font-weight: var(--font-semi-bold);
   /* justify-content: center;  */
 }
-
+ight
 .nav__burger, 
 .nav__close {
   position: absolute;
@@ -376,6 +376,29 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 }
 
 /*=============== TOP IMAGE===============*/
+.image__container {
+  position: relative;
+  max-width:100%;
+  height: 40vh;
+  overflow: hidden;
+}
+.image__container img {
+  max-width:100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+ /*画像上の文字*/
+ .image__container  p {
+  position: absolute;
+  color: #d1d3d3;
+  top: 75%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 2em;
+  /* order: 1; */
+}
+
 /* top image */
 .wrapper {
   position: relative;
@@ -415,21 +438,23 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   /* order: 1; */
 }
 /*=============== BODY ===============*/
+.main__container {
+  text-align: center;
 
-.church__label{
-  margin: 100px;
 }
 
 /*集会案内、宣教活動body*/
-.reihai, .denndou{
-  padding-top: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 50px;
+.reihai, .denndou, .access{
   /* margin: 10px; */
   margin-top: 20px;
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-bottom: 20px;
+  margin-left: 80px;       /*背景グレー部分横幅*/
+  margin-right: 80px;     /*背景グレー部分横幅*/
+  padding-top: 60px;      /*白い部分幅*/
+  padding-left: 80px;      /*白い部分幅*/
+  padding-right: 80px;    /*白い部分幅*/
+  padding-bottom: 50px;
+  
   background-color: var(--back-color);
  }
  /*ホームbody*/
@@ -449,6 +474,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   /* width: 500px; */
   height: 30vh;
  }
+ 
 
 
 /*=============== TITLE ===============*/
@@ -508,14 +534,69 @@ text-decoration-color: var(--border-color);
  }
 /*小文字見出し*/ /*2文字*/
   .title {
-    width: 42px;
+    /* width: 42px; */
+    display: inline-block; 
     padding: 0px;/*文字周りの余白*/
     padding-left: 4px;
+    padding-right: 4px;
     margin-bottom: 10px;
     color: var(--black-color);/*文字色*/
     /* background: var(--back-gray); */
     border-bottom: solid 3px var(--border-color);/*下線*/
 }
+
+/*=============== HOME BODY ===============*/
+
+.home__body .church__label{
+  padding: 100px;
+  text-align: center;
+  background-color: var(--body-color);
+}
+.home__body .church__label p {
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  text-align: center;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+/* 無限スライダー写真 */
+.yoko__infiniteslide img{
+  height: 200px;
+  filter: grayscale(20%);
+    filter: saturate(70%);
+}
+/* 縦スライダー全体 */
+
+.roop__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 500px;
+  overflow: hidden; /*スライダーのはみ出る部分を隠す*/
+}
+/* 左縦無限スライダー写真 */
+.left__infiniteslide, .right__infiniteslide{
+  height: 100%;
+  width: 200px;
+  line-height: 0;/*写真の上下の隙間をなくす*/
+}
+
+.left__infiniteslide img,.right__infiniteslide img{
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  filter: grayscale(20%);
+    filter: saturate(70%);
+    /* margin-bottom: 0;
+    margin-top: 0; */
+}
+
+
+
+/*=============== HOME BODY ここまで===============*/
+
 
 /*=============== FOOTER ===============*/
 
@@ -525,7 +606,7 @@ footer {
   left: 0;
   width: 100%;
   height: auto;
-  background-color: rgb(0,0,0);
+  background-color: var(--black-color);
   margin-top:2px;  
   font-size: .800rem;
 
@@ -549,11 +630,13 @@ display: inline-block;
 }
 .foot__list a:hover {
   text-decoration: underline;
-
+  color: var(--white-color);
 }
-a, .foot__christ, .Copyright{
+.foot__links a:hover {
+  color: var(--white-color);
+}
+ .foot__list a , .foot__links a ,.foot__christ, .Copyright{
   color:var(--gray-color);
-   
   list-style-type: none;  /*点非表示*/
 }
 li :not(.foot_mail,.call) {

@@ -149,15 +149,15 @@
    }
    
    .tab__panel-box001, .tab__panel-box002 {
-     /* background-color: var(--white-color); */
-     padding: 50px;
-     padding-left: 100px;
-    padding-right: 100px;
+    margin-bottom: 20px;
+    margin-left: 80px; /*背景グレー部分横幅*/
+    margin-right: 80px; /*背景グレー部分横幅*/
+    padding: 60px;
+    padding-left: 80px; /*白い部分幅*/
+    padding-right: 80px;  /*白い部分幅*/
     padding-bottom: 50px;
-     /* margin: 10px; */
-     margin-left: 100px;
-     margin-right: 100px;
-     background-color: #eaecec;
+     
+     background-color: var(--back-color);
      display: none;
    }   
    /* is-showがついている時のスタイル */
@@ -165,6 +165,13 @@
      display: block;
    }
  
+.other__church li a{
+  text-decoration: underline;
+}
+.other__church li a:hover{
+  text-decoration: none;
+  color: var(--cursor-text-color);
+}
   
 
 /* 
@@ -176,25 +183,57 @@
     text-decoration-thickness: 4px;
    } */
 
-   .pastor {
+   /* .pastor {
     height: 100%;
     display: flex;
-    justify-content: flex-start;
-    /* align-items: center; */
-    /* padding-left: 50px; */
+    justify-content: space-between;
     padding-right: 10px;
+  } */
+  .pastor {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    /* height: 500px; */
+  }
+  .pastor .pastor__photo  {
+    padding: 20px;
+    width: 35%;
+    /* background-color: blue; */
+  }
+  .pastor__photo img {
+    width: 100%;
   }
 
-
-  .item {
-    /* margin-left: 10px;
-    margin-right: 10px; */
-   
-      /* min-width: 150px; アイテムの最小幅を設定 */
-    background-color: lightblue;
-    margin-bottom: 20px; /* 行間を設定 */
-    box-sizing: border-box; /* paddingやborderを要素の幅に含める */
+  .pastor .pastor__setsumei  {
+    padding: 20px;
+    width: 60%;
+    /* background-color: goldenrod; */
   }
-.item2, .item4 {
-    padding-left: 40px;
-}
+  .bokushi {
+    /* font-size: 1.1rem ; */
+    font-size: var(--normal-font-size);
+    /* font-weight: var(--font-semi-bold); */
+    background: var(--back-gray);/*背景色*/
+    display: inline-block; /*背景色を文字の長さに合わせる*/
+    padding-top: 0.2em;/*文字まわり（上下左右）の余白*/
+    padding-bottom: 0.2em;
+  }
+  .name__e {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    /* font-family: "Helvetica Neue"; */
+    font-family: 'GenShinGothic-Bold';
+  }
+  .name__j {
+    /*線の種類（実線） 太さ 色*/
+    border-bottom: solid 5px  var(--dot-color);
+     display: inline-block;
+    padding-bottom: 1.5rem;
+    margin-bottom: 20px;
+    /* font-family: Helvetica; */
+    font-family: 'GenShinGothic-Bold';
+  }
+
