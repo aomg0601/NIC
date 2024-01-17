@@ -5,3 +5,203 @@
   .setsumei {
     margin-top: 20px;
   }
+
+  
+/* slick zoom*/
+.slider {
+  /* height: 53vw; */
+  margin-inline: auto;
+  overflow: hidden; /* 画像がはみ出ないようにする */
+  /* width: 80vw; */
+  width: 100%;
+}
+.slick-img img {
+  width: 100%;
+}
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15); /* 拡大率 */
+  }
+}
+.add-animation {
+  animation: zoomUp 10s linear 0s normal both;
+}
+/* slickここまで */
+
+
+
+
+/* 写真と文字のContainer */
+.act__box {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+
+  /* 横幅がディスプレイの横幅よりも大きくならないように */
+  /* max-width: 100%; 最大幅を100%に設定 */
+  /* width: 100%; 幅を100%に設定 */
+  /* margin-inline: auto;  */
+}
+.denndou .act__box {
+  overflow-x: hidden; /* 横スクロールを制限 */
+}
+
+
+.act__pic {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  max-width: 700px;
+  border-radius: 1em; /*角丸める*/
+  margin-top: 50px; /* 追加した行：上方向に20pxずらす */
+  /* background-color: blue; */
+  /* 高さをディスプレイの高さの50%に設定 */
+/* height: 50vh; */
+}
+.act__pic img {
+  width: 100%;
+}
+.act__textbox {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 40%;
+  /* background-color: green; */
+}
+
+.act__box.t1 {
+  margin-top: 20px;
+}
+.act__box.t2 {
+  margin-top: -80px;
+}
+.act__box.t1 .act__pic {
+  float: right;
+  /* 30pxのオフセットを加えつつも横幅を保持 */
+  margin-left: -30px;
+  width: calc(50% + 30px);
+}
+
+.act__box.t2 .act__pic {
+  float: left;
+  /* 30pxのオフセットを加えつつも横幅を保持 */
+  margin-right: -30px;
+  width: calc(50% + 30px);
+}
+
+
+.act__box.t1 .act__textbox {
+
+  margin-top: -8%;
+  float: left;
+}
+.act__box.t2 .act__textbox {
+  margin-top: 60px;
+  float: right;
+}
+
+.act__textbox .act__text{
+  max-width: 100%;
+}
+
+
+.mikotoba .act__mikotoba {
+  max-width: 100%;
+  border-radius: 1em; /*角丸める*/
+}
+.mikotoba .slider {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  padding-top: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  border-radius: 1em; /*角丸める*/
+}
+.mikotoba .slider ,.slick-img{
+ 
+  border-radius: 1em; /*角丸める*/
+}
+/* ********************** */
+.act__text .aaa {
+  max-width: 100%;
+	opacity: 0;
+	transition-duration: 1s;
+  overflow-wrap: break-word; /*文字が枠からはみ出ないように*/
+}
+.act__box.t1 .aaa{
+	/* background: #F2FDE8; */
+	/* border: 2px solid #459300; */
+	/* color: #459300; */
+	transform: translateX(-300px);
+}
+.act__box.t2 .aaa{
+	/* background: #FDE9EF; */
+	/* border: 2px solid #B5375D; */
+	/* color: #B5375D; */
+	transform: translateX(300px);
+}
+.act__box.t1 .aaa.effect, .act__box.t2 .aaa.effect {
+	transform: translateX(0);
+	opacity: 1;
+}
+/* *********** */
+.hd__content {
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 0.2rem;
+  margin-top: 20%;
+  left: 15%;
+  overflow: visible; /* 追加 */ 
+  z-index: 10;
+}
+.hd__content::before {
+  max-width: 100%;
+  position: absolute;
+  /* top: -300%; */
+  left: -15%;
+  /* transform: translateX(-50%); */
+  color: #d4d4d4;
+  font-size:  4.5vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  content: '炊き出し伝道';
+  z-index: -1;
+}
+.rd__content {
+  max-width: 100%;
+  position: relative;
+  margin-bottom: 0.2rem;
+  /* padding-right: 30px; */
+  top: 20%;
+  left: 5%;
+  z-index: 10;
+}
+.rd__content::before {
+  max-width: 100%;
+  position: absolute;
+  /* top: 100%; */
+  left: -15%;
+  /* transform: translateX(-50%); */
+  color: #d4d4d4;
+  font-size: 4.5vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  content: '路傍伝道';
+  z-index: -1;
+
+}
+.ddd {
+  padding-top: 20%;
+}
+.sss {
+  padding-top: 20%;
+}

@@ -108,6 +108,96 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
       <script>
+        // *******文字フェードイン********//
+        $(window).scroll(function() {
+          //ウィンドウの高さを取得
+          var windowH = $(window).height(),
+          //スクロール量を取得
+          scrollY = $(window).scrollTop();
+          
+          $('*').each(function() {
+            //要素の位置（上端）を取得
+            var thisPosition = $(this).offset().top;
+            //要素の高さを取得
+            var thisHeight = $(this).height();
+            
+            //要素が画面上に表示されているときにclass="effect"をつける
+            if (thisPosition <= scrollY + windowH && thisPosition + thisHeight >= scrollY) {
+              $(this).addClass('effect');
+              
+            }else{
+              $(this).removeClass('effect') ;
+            }
+          });
+        });
+
+
+
+
+        // slick zoom
+        $(function () {
+          $(".slider")
+            // 最初のスライドに"add-animation"のclassを付ける(data-slick-index="0"が最初のスライドを指す)
+            .on("init", function () {
+              $('.slick-slide[data-slick-index="0"]').addClass("add-animation");
+            })
+            // 通常のオプション
+            .slick({
+              autoplay: true, // 自動再生ON
+              fade: true, // フェードON
+              arrows: false, // 矢印OFF
+              speed: 2000, // スライド、フェードアニメーションの速度1000ミリ秒
+              autoplaySpeed: 4000, // 自動再生速度4000ミリ秒
+              pauseOnFocus: false, // フォーカスで一時停止OFF
+              pauseOnHover: false, // マウスホバーで一時停止OFF
+            })
+            .on({
+              // スライドが移動する前に発生するイベント
+              beforeChange: function (event, slick, currentSlide, nextSlide) {
+                // 表示されているスライドに"add-animation"のclassをつける
+                $(".slick-slide", this).eq(nextSlide).addClass("add-animation");
+                // あとで"add-animation"のclassを消すための"remove-animation"classを付ける
+                $(".slick-slide", this).eq(currentSlide).addClass("remove-animation");
+              },
+              // スライドが移動した後に発生するイベント
+              afterChange: function () {
+                // 表示していないスライドはアニメーションのclassを外す
+                $(".remove-animation", this).removeClass(
+                  "remove-animation add-animation"
+                );
+              },
+            });
+        });
+
+
+        $(function() {
+          // スライドのli要素に対してCSSスタイルを設定
+          $(".slideshow-zoom li").css({ "position": "relative" });
+
+          // 初期状態でスライドを非表示にし、絶対位置に配置
+          $(".slideshow-zoom li:not(:first-child)").hide().css({ "position": "absolute", "top": 0, "left": 0 });
+
+          // 最初のスライドをzoomクラスに追加して表示
+          $(".slideshow-zoom li:first-child").addClass("zoom");
+
+          // 一定間隔でスライドを切り替えるためのタイマーを設定
+          setInterval(function() {
+              // 現在表示されているスライド（zoomクラスが付いている）を取得
+              var $active = $(".slideshow-zoom li.zoom");
+
+              // 次のスライドを取得し、存在しない場合は最初のスライドを選択
+              var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-zoom li:first");
+
+              // 現在のスライドをフェードアウトして非表示にし、zoomクラスを削除
+              // $active.fadeOut(2000).removeClass("zoom");
+              $active.fadeOut(2000, function() {
+                $(this).removeClass("zoom");
+            });
+
+              // 次のスライドをフェードインして表示し、zoomクラスを追加
+              $next.fadeIn(2000).addClass("zoom");
+          }, 10000); // タイマーの間隔（ミリ秒単位）を設定
+      });
         $(function () {
             $('.denndou__slide').slick({
                 arrows: true, // 前・次のボタンを表示する
@@ -215,10 +305,126 @@
             <div class = "blur style"></div>
             <p>宣教活動</p>
             </div>
-            <div class="denndou">
+            <div class="denndou">               
+
                 <h1>宣教活動</h1>
+
+                 <!-- .act__box t1 -->
+            <div class="act__box t1">
+              <!-- 사진 -->
+              <div class="act__pic">
+                <div class="slider">
+                  <div class="slick-img">
+                    <img src="img/hd1.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/hd2.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/hd3.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/hd4.jpg"alt="" />
+                  </div>
+                </div>
+
+              </div>
+              <!-- text -->
+              <div class="act__textbox">
+                <div class="act__text">
+
+                  <div class="aaa">
+                    <div class="hd__content">
+                      <!-- 炊き出し伝道 -->
+                      
+                      
+                    </div>
+                    <div class="ddd">ddd</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- .act__box t1 ここまで-->
+            <!-- .act__box t2 ここから -->
+            <div class="act__box t2">
+              <!-- 사진 -->
+              <div class="act__pic">
+                <div class="slider">
+                  <div class="slick-img">
+                    <img src="img/rd1.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/rd2.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/rd3.jpg"alt="" />
+                  </div>
+                  <div class="slick-img">
+                    <img src="img/rd4.jpg"alt="" />
+                  </div>
+                </div>
+              </div>
+              <!-- text -->
+              <div class="act__textbox">
+                <div class="act__text">
+                  
+                  <div class="aaa">
+                    <div class="sss">sss</div>
+                    <div class="rd__content">
+                      <!-- 路傍伝道 -->
+                    </div>
+                  </div>
+
+                </div>
+                </div>
+              
+              </div>
+
+            
+            <!-- .act__box t2 ここまで -->
+
+              <!-- .act__box t1 -->
+              <div class="mikotoba">
+                <!-- 사진 -->
+                <div class="act__mikotoba">
+                  <div class="slider">
+                    <div class="slick-img">
+                      <img src="img/rd1.jpg"alt="" />
+                    </div>
+                    <!-- <div class="slick-img">
+                      <img src="img/rd2.jpg"alt="" />
+                    </div>
+                    <div class="slick-img">
+                      <img src="img/rd3.jpg"alt="" />
+                    </div>
+                    <div class="slick-img">
+                      <img src="img/rd4.jpg"alt="" />
+                    </div> -->
+                  </div>
+                </div>
+                <!-- text -->
+                <!-- <div class="act__textbox">
+                  <div class="act__text">
+                    <div class="aaa">
+                      <div class="hd__content">
+                        炊き出し伝道
+                        
+                      </div>
+                     </div>
+  
+                  </div>
+                </div> -->
+              </div>
+              <!-- .act__box t1 ここまで-->
+  
+            </div>
+            <!-- denndou ここまで -->
+
+
+
                 <!-- 炊き出し伝道 -->
-                <h3>炊き出し伝道</h3>
+                <!-- <h3>炊き出し伝道</h3>
                 <div class="pic__roll">
                     <ul class="denndou__slide" id="js-slider-3">
                         <li>
@@ -246,9 +452,9 @@
                 </div>
                 <div class="setsumei">
                     名古屋国際教会では、毎週日曜日の礼拝後に、愛知県図書館付近の景雲橋下の公園で炊き出し伝道を行っております。
-                </div>
+                </div> -->
                 <!-- 路傍伝道 -->
-                <h3>路傍伝道</h3>
+                <!-- <h3>路傍伝道</h3>
                 <div class="pic__roll">
                     <ul class="denndou__slide2" id="js-slider-2">
                         <li>
@@ -276,22 +482,8 @@
                 </div>
                 <div class="setsumei">
                     また、名古屋国際教会では、不定期ですが、路傍伝道も行っております。
-                </div>
-
-
-                
-            </div>
-            
-            
-
-
-
-
-
-
-
-
-       
+                </div>                -->
+            </div>      
       </div>
 
 
@@ -320,8 +512,6 @@
          </div>  
      </footer>
 
-
-      
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>

@@ -10,8 +10,200 @@
      <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <style>
+        .pic__roll {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .denndou__slide .slick-slide ,.denndou__slide2 .slick-slide {
+            margin: 0 30px;
+            padding: 30px 0;
+            position: relative;
+        }
+        .denndou__slide .slick-slide .slide-img ,.denndou__slide2 .slick-slide .slide-img {
+            width: 300px;
+            height: 200px;
+            transition: all 0.6s ease 0.4s;
+            opacity: 0.8;
+            box-shadow: 7px 7px 15px -5px #666;
+            overflow: hidden;
+        }
+        .denndou__slide .slick-slide.slick-current .slide-img,.denndou__slide2 .slick-slide.slick-current .slide-img {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        .denndou__slide .slick-slide .slide-img img,.denndou__slide2 .slick-slide .slide-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .denndou__slide .slick-arrow,.denndou__slide2 .slick-arrow {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-size: 0;
+            position: absolute;
+            top: 50%;
+            z-index: 1;
+            transform: translateY(-50%);
+            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+        }
+        .denndou__slide .slick-arrow::before,.denndou__slide2 .slick-arrow::before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #09000d;
+            border-width: 3px 3px 0 0;
+            position: absolute;
+            top: 8px;
+            transform: rotate(45deg);
+        }
+        .denndou__slide .slick-next,.denndou__slide2 .slick-next {
+            right: -10px;
+        }
+        .denndou__slide .slick-prev,.denndou__slide2 .slick-prev {
+            left: -10px;
+        }
+        .denndou__slide .slick-next::before,.denndou__slide2 .slick-next::before {
+            left: 5px;
+        }
+        .denndou__slide .slick-prev::before, .denndou__slide2 .slick-prev::before {
+            border-width: 0 0 3px 3px;
+            right: 6px;
+        }
+        .dots .slick-dots,.dots2 .slick-dots {
+            text-align: center;
+        }
+        .dots .slick-dots li, .dots2 .slick-dots li {
+            display: inline-block;
+        }
+        .dots .slick-dots button, .dots2 .slick-dots button {
+            display: block;
+            width: 10px;
+            height: 10px;
+            margin: 6px;
+            font-size: 0;
+            padding: 0;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            background: #bcbcbc;
+            border-radius: 50%;
+        }
+        .dots .slick-dots .slick-active button, .dots2 .slick-dots .slick-active button {
+            background:var(--dot-color);
+        }
+      </style>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script>
+        $(function(){
+  $(".slideshow-zoom li").css({"position":"relative"});
+  $(".slideshow-zoom li").hide().css({"position":"absolute","top":0,"left":0});
+  setInterval(function(){
+    var $active = $(".slideshow-zoom li.zoom");
+    var $next = $active.next("li").length?$active.next("li"):$(".slideshow-zoom li:first");
+    $active.fadeOut(2000).removeClass("zoom");
+    $next.fadeIn(2000).addClass("zoom");
+  },2000);
+});
+        $(function () {
+            $('.denndou__slide').slick({
+                arrows: true, // 前・次のボタンを表示する
+                dots: true, // ドットナビゲーションを表示する
+                appendDots: $('.dots'), // ドットナビゲーションの生成位置を変更
+                speed: 1000, // スライドさせるスピード（ミリ秒）
+                slidesToShow: 1, // 表示させるスライド数
+                centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
+                variableWidth: true, // スライド幅の自動計算を無効化
+             });
+            });
+        $(function () {
+            $('.denndou__slide2').slick({
+                arrows: true, // 前・次のボタンを表示する
+                dots: true, // ドットナビゲーションを表示する
+                appendDots: $('.dots2'), // ドットナビゲーションの生成位置を変更
+                speed: 1000, // スライドさせるスピード（ミリ秒）
+                slidesToShow: 1, // 表示させるスライド数
+                centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
+                variableWidth: true, // スライド幅の自動計算を無効化
+             });
+            });
+      </script>
 </head>
 <body>
+    <!-- 炊き出し伝道 -->
+    <h3>炊き出し伝道</h3>
+    <div class="pic__roll">
+        <ul class="denndou__slide" id="js-slider-3">
+            <li>
+              <div class="slide-img">
+                <img src="img/hd1.jpg" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/hd2.jpg" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/hd3.jpg" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/hd4.jpg" alt="" >
+              </div>
+            </li>
+          </ul>
+          <div class="dots"></div>                     
+    </div>
+    <div class="setsumei">
+        名古屋国際教会では、毎週日曜日の礼拝後に、愛知県図書館付近の景雲橋下の公園で炊き出し伝道を行っております。
+    </div>
+    <!-- 路傍伝道 -->
+    <h3>路傍伝道</h3>
+    <div class="pic__roll">
+        <ul class="denndou__slide2" id="js-slider-2">
+            <li>
+              <div class="slide-img">
+                <img src="img/logo4.png" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/logo4.png" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/logo4.png" alt="" >
+              </div>
+            </li>
+            <li>
+              <div class="slide-img">
+                <img src="img/logo.png" alt="" >
+              </div>
+            </li>
+          </ul>
+          <div class="dots2"></div>                     
+    </div>
+    <div class="setsumei">
+        また、名古屋国際教会では、不定期ですが、路傍伝道も行っております。
+    </div>
+
+
+
+
     <footer>
         <div class = "foot__container">                  
                  <div class = "foot__center"> 
