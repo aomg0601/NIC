@@ -19,15 +19,23 @@ ul li {
     max-width: 100%;
     /* height: 500px; */
   }
-  /*  */
-  .access h1 {
+  /* 大見出し */
+  /* .access h1 {
     text-align: start;
+    font-size: 2vw;
   }
+  @media (max-width:768) {
+    .access h1 {
+      text-align: start;
+      font-size: 2vw;
+    }
+  } */
   .access__body .access__setsumei,  .access__body .access__map  {
     width: 45%;
     margin: 5px;
     padding: 5px;
   }
+
  /* 住所 */
   .access__address {
     text-align: start;
@@ -39,6 +47,7 @@ ul li {
     padding-top:20px;
     font-size: 1rem;
   }
+
   /* 教会 写真 */
   .access__setsumei img {
     position: relative;
@@ -125,4 +134,118 @@ ul li {
 .trans__text  li a:hover{
   /* color: navy; */
   text-decoration: none;
+}
+
+
+/******************************************/
+
+/* 1024px以下 */
+@media (max-width:1024px) {
+  .access__body .access__setsumei,  .access__body .access__map  {
+    width: 45%;
+    margin: 0%;
+    padding: 0%;
+  }
+  .access__address {
+    text-align: start;
+    padding-top: 10px;
+    font-size: 1rem;
+  }
+  .access__text {
+    
+    padding-top:20px;
+    font-size: 0.9rem;
+  }
+
+}
+/* 768px以下 */
+@media (max-width:768px) {
+  .access__body {
+    /* display: flex; */
+    display: block;
+    /* justify-content: space-between; */
+    max-width: 100%;
+    /* height: 500px; */
+  }
+  .access__body .access__setsumei,  .access__body .access__map  {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+  }
+
+}
+
+
+/* 425px以下は文字小さめにする */
+@media (max-width:425px) {
+  .access__body .access__setsumei,  .access__body .access__map  {
+    margin: 2px;
+    padding: 2px;
+  }
+   /* 住所 */
+   .access__address {
+    font-size: 0.8rem;
+  }
+  .access__text {
+    text-align: start;
+    padding-top:20px;
+    font-size: 0.7rem;
+  }
+    /* 教会 写真 */
+    .access__setsumei img {
+      position: relative;
+      /* width: 100%; */
+      height: 80%;
+      margin-top: 20px;
+      border-radius: 2em; /*角丸める*/
+    }
+    /* 地図 */
+    .access__map iframe {
+      text-align: center;
+      margin-top: 30px;
+     height: 300px;
+    }
+
+    /*六番町駅*/
+ .access__text p {
+  margin-bottom: 0px;
+  font-size: 0.9rem;
+  font-weight: var(--font-semi-bold);
+ }
+  /* Googlemap Button */
+  .map__button {
+    text-align: start;
+    margin-top: 15px;
+    padding: 6px;
+    border-radius: 0.7em; /*角丸める*/
+    display: inline-block; /*背景色を文字の長さに合わせる*/
+    font-size: 0.9rem;
+    border: 2px solid var(--black-color); /* 外枠の囲い線を黒に設定 */
+    color: var(--black-color); /* テキストのデフォルトカラーを設定 */
+    transition: background-color 0.3s, color 0.3s; /* アニメーションの追加 */
+  }
+  .trans__title {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: start;
+    font-size: 0.9rem;
+    /* font-weight: var(--font-semi-bold); */
+  }
+  .trans {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* margin-left: 10px; */
+    /* text-align: start; */
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .trans__text  li{
+    /* text-align: start; */
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+  }
+  .transportation div {
+    font-size: 0.7rem;
+  }
+ 
 }

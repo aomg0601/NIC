@@ -23,8 +23,7 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Noto Sans JP", sans-serif; /* ページ全体のフォント */
-  --normal-font-size: .938rem; 
-  /* --normal-font-size:0.058625vw; */
+  --normal-font-size: .938rem;   /* 通常のフォントサイズ */
 
   /*========== Font weight ==========*/
   --font-regular: 400;          /* 通常のフォントの太さ */
@@ -39,7 +38,6 @@
 @media screen and (min-width: 1024px) {
   :root {
     --normal-font-size: 1rem;
-    /* --normal-font-size: 0.0625vw; */
   }
 }
 
@@ -70,9 +68,9 @@ ul {
   /*-webkit-tap-highlight-color: transparent;*/
 }
 
-/* a :not(.Copyright){
+a :not(call,foot__mail){
   text-decoration: none;
-} */
+}
 a:hover {
   color: var(--white-color); /* カーソルを当てた時のテキストの色 */
 }
@@ -83,9 +81,6 @@ div i:not(.ri-map-pin-2-fill) {
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.body__container {
-  width: 100%;
-}
 .body__container a{
   text-decoration: none;
   /* color: #b0b0b0; */
@@ -160,7 +155,7 @@ div i:not(.ri-map-pin-2-fill) {
   font-weight: var(--font-semi-bold);
   /* justify-content: center;  */
 }
-/* ight */
+ight
 .nav__burger, 
 .nav__close {
   position: absolute;
@@ -314,7 +309,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 }
 
 /* For large devices */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1118px) {
   .container {
     margin-inline: auto;
   }
@@ -384,10 +379,9 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 .image__container {
   position: relative;
   max-width:100%;
-  height: 30vw;
+  height: 40vh;
   overflow: hidden;
 }
-
 .image__container img {
   max-width:100%;
   height: auto;
@@ -398,29 +392,12 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
  .image__container  p {
   position: absolute;
   color: #d1d3d3;
-  /* height: 20vh; */
   top: 75%;
   right: 5%;
   font-weight: bold;
-  font-size: 4vw;
-  z-index: 2;
+  font-size: 2em;
   /* order: 1; */
 }
-/* パソコン1280px以下のトップ画像レスポンシブ */
-@media (max-width:1280px) {
-  .image__container {
-    height: 27vw;
-  } 
-   /*画像上の文字位置*/
- /* .image__container  p {
-    top: 75%;
-  } */
-} 
-
-
-
-
-
 
 /* top image */
 .wrapper {
@@ -460,7 +437,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   font-size: 2em;
   /* order: 1; */
 }
-/*=============== BODY ============= ==*/
+/*=============== BODY ===============*/
 .main__container {
   text-align: center;
 
@@ -470,61 +447,20 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 .reihai, .denndou, .access{
   width: 90%;
   float: center;
-  /* max-width: 1440px; */
+  max-width: 1440px;
   margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
   /* margin: 10px; */
-  margin-top: 2%;
+  margin-top: 20px;
   margin-bottom: 20px;
   /* margin-left: 80px;       /*背景グレー部分横幅
   margin-right: 80px;     背景グレー部分横幅 */
-  padding-top: 4%;      /*白い部分幅*/
+  padding-top: 60px;      /*白い部分幅*/
   padding-left: 6%;      /*白い部分幅*/
   padding-right: 6%;    /*白い部分幅*/
   padding-bottom: 50px;
+  
   background-color: var(--back-color);
  }
-
-@media (max-width:1024px) {
-  .reihai, .denndou, .access{
-    width: 100%;
-    float: center;
-    /* max-width: 1440px; */
-    margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
-    /* margin: 10px; */
-    margin-top: 2%;
-    margin-bottom: 2%;
-    /* margin-left: 80px;       /*背景グレー部分横幅
-    margin-right: 80px;     背景グレー部分横幅 */
-    padding-top: 4%;      /*白い部分幅*/
-    padding-bottom: 4%;
-    background-color: var(--back-color);
-   }
-}
-
-
-@media (max-width:425px) {
-  .reihai, .denndou, .access{
-    width: 100%;
-    float: center;
-    /* max-width: 1440px; */
-    margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
-    /* margin: 10px; */
-    margin-top: 2%;
-    margin-bottom: 2%;
-    /* margin-left: 80px;       /*背景グレー部分横幅
-    margin-right: 80px;     背景グレー部分横幅 */
-    padding-top: 4%;      /*白い部分幅*/
-    padding-bottom: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
-    background-color: var(--back-color);
-   }
-}
-
-
-
- 
- 
  /*ホームbody*/
  .home {
   padding-top: 50px;
@@ -548,8 +484,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 /*=============== TITLE ===============*/
   /* 大見出し */
   .heading {
-    /* font-size: 1.75rem; */
-    font-size: 4vw;
+    font-size: 1.75rem;
     font-weight: var(--font-semi-bold);
     padding-left: 10px;
   }
@@ -561,20 +496,12 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
     border-left: 6px solid var(--border-color);
     border-bottom:4px solid var(--border-color);
    }
-   /* 大見出し */
+
    h1 {
-    text-align: start;
-    font-size: 3vw;
     padding: 0.3em;/*文字周りの余白*/
     /* color: #494949; */
     background: var(--back-gray);/*背景色*/
     border-left: solid 5px var(--border-color);/*左線（実線 太さ 色）*/
-  }
-  /* 425px(Large Mobile)以下は見出しが小さくなりすぎるので修正*/
-  @media (max-width:425px) {
-    h1 {
-      font-size: 0.9rem;
-    }
   }
  /* 見出し囲い */
 .border2 {
@@ -736,15 +663,6 @@ font-size: 24px;
 padding: 20px 30px;
 
 }
-.foot__list .Copyright a {
-  text-decoration: underline;
-  text-underline-position : under;/* アンダーラインを少し下にずらす */
-}
-@media (max-width:1280px) {
-  .foot__list {
-    padding-left: 8%;
-  }
-}
 
 
 /* Footer for mobile devices*/
@@ -760,6 +678,7 @@ padding: 20px 30px;
   }
   .foot__list {
        margin-top: 20px; 
+      margin-left: 25px;
       margin-right: 20px; 
       justify-content: center; 
   }

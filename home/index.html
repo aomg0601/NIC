@@ -26,14 +26,21 @@
          }
          .full__screen p {
             position: absolute;
+            width: 100%;
             top: 50%; /* 親要素の上端から50%の位置に配置 */
             left: 50%; /* 左端を画面の中央に移動 */
             transform: translate(-50%,-50%); /* 要素の幅の半分だけ左,上に移動 */
-            font-size: 4rem;
+            font-size: 7vw;
             font-weight:bold ;
             color: var(--white-color);
             text-align: center;
             font-family: 'Geologica', sans-serif;
+         }
+         /* スマホは文字を大きくする */
+         @media (max-width:430px) {
+            .full__screen p {
+            font-size: 9.5vw;
+         }
          }
          .screen__massage .p {
             width: 100%;
@@ -272,7 +279,7 @@
         <div class="full__screen">
          <div class = "main1" ><p>"主を賛美する共同体"</p></div>
          <div class = "main2" ><p>名古屋国際教会</p></div>
-         <div class = "main3" ><p>Nagoya International Community</p></div>
+         <div class = "main3" ><p>Nagoya <br>International <br> Community</p></div>
         </div>
 
         <div class="church__label">
@@ -396,7 +403,7 @@
                          <li><i class="ri-phone-fill">日本語/韓国語/英語:<a  href="tel:+81 70 8392 3280" class = "call">＋81 70 8392 3280</a></i></li>
                          <li><i class="ri-phone-fill">中国語:<a  href="tel:+81 70 8392 3280" class = "call" >＋81 70 8392 3280</a></i></li>
                          <li><i class="ri-mail-fill"><a href="mailto:kros_o0n@naver.com" class = "foot_mail">kros_o0n@naver.com</a></i> </li>  
-                         <li class = "Copyright">Copyright © 神の家族キリスト教会 名古屋国際教会 All Rights Reserved.</li>
+                         <li class = "Copyright"> <span><a href="https://github.com/aomg0601/NIC.git" target="_blank" >Copyright</a></span> © 神の家族キリスト教会 名古屋国際教会 All Rights Reserved.</li>
                          <li class="foot__christ">
                              当教会は、キリスト教(プロテスタント)の教会です。エホバの証人、統一協会、モルモン教、新天地などとは一切関係ありません。
                          </li>       

@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     max-width:100%; /*画面サイズに合わせて*/
-    height: 40vh;
+    height: 30vh;
     z-index: 0;
  }
  /* .pic::before {
@@ -54,7 +54,7 @@
   /* top image */
 .top-bg {
     max-width:100%; /*画面サイズに合わせて*/
-    height: 40vh;
+    height: 30vw;
 
     /* background-color: #eee; */
     background-image: url(/home/img/jujika.jpg);
@@ -70,14 +70,25 @@
  
 
   /*画像上の文字*/
-.top__image p {
+.background__image  p {
     position: absolute;
     color: #d1d3d3;
-    top: 45%;
+    top: 75%;
     right: 5%;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 4vw;
 }
+/* 1280以下トップ画像大きさ */
+@media (max-width:1280px) {
+  .top-bg {
+     height: 27vw;
+  }
+
+}
+
+
+
+
    .tab {
     max-width: 100%;
     /* margin: 0 auto; */
@@ -85,6 +96,14 @@
     margin-top: 10px;
   }
   
+  /* @media (max-width:768px) {
+     /*画像上の文字
+     .top__image p {
+      top:28%;
+    }
+
+  }  */
+
   /* タブメニュー */
   .tab__menu {
     display: flex;
@@ -128,8 +147,8 @@
   .tab__menu-item.is-active {
     background-color: var(--black-color);
     text-decoration: underline;
-	text-underline-position : under;/* アンダーラインを少し下にずらす */
-	text-decoration-color: var(--white-color);
+	  text-underline-position : under;/* アンダーラインを少し下にずらす */
+	  text-decoration-color: var(--white-color);
     text-decoration-thickness: 2px;
     color:var(--white-color);
     padding: 12px 5px; /*box size*/
@@ -150,11 +169,16 @@
    
    .tab__panel-box001, .tab__panel-box002 {
     margin-bottom: 20px;
-    margin-left: 80px; /*背景グレー部分横幅*/
-    margin-right: 80px; /*背景グレー部分横幅*/
-    padding: 60px;
-    padding-left: 80px; /*白い部分幅*/
-    padding-right: 80px;  /*白い部分幅*/
+    width: 90%;
+    /* max-width: 1440px; */
+    margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
+    margin-bottom: 20px;
+    /* margin-left: 80px; /*背景グレー部分横幅
+    margin-right: 80px; 背景グレー部分横幅 */
+    /* padding: 50px; */
+    padding-top: 4%;
+    padding-left: 10%; /*白い部分幅*/
+    padding-right: 10%;  /*白い部分幅*/
     padding-bottom: 50px;
      
      background-color: var(--back-color);
@@ -163,6 +187,26 @@
    /* is-showがついている時のスタイル */
    .tab__panel-box.is-show {
      display: block;
+   }
+
+/* 1024px以下はグレーの余白なくす */
+   @media (max-width:1024px) {
+    .tab__panel-box001, .tab__panel-box002 {
+      margin-bottom: 20px;
+      width: 100%;
+      /* max-width: 1440px; */
+      margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
+      /* margin-left: 80px; /*背景グレー部分横幅
+      margin-right: 80px; 背景グレー部分横幅 */
+      padding: 60px;
+      padding-top: 2%;
+      padding-left: 6%; /*白い部分幅*/
+      padding-right: 6%;  /*白い部分幅*/
+      padding-bottom: 4%;
+      margin-bottom: 2%;
+       background-color: var(--back-color);
+       display: none;
+     }   
    }
  
 .other__church li a{
@@ -225,7 +269,8 @@
     font-size: 1.6rem;
     font-weight: 600;
     /* font-family: "Helvetica Neue"; */
-    font-family: 'GenShinGothic-Bold';
+    /* font-family: 'GenShinGothic-Bold'; */
+    font-family: 'Montserrat', sans-serif;
   }
   .name__j {
     /*線の種類（実線） 太さ 色*/
