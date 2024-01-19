@@ -16,6 +16,7 @@
   --back-gray: #dee0e1;
   /* --body-color: hsl(220, 100%, 97%); */
   --body-color: #fcfaf5;
+  /* --body-color:rgb(0,0,0); */
   --border-color: #7C7C7C;
   --cursor-text-color:#2C2D2D;
   --back-color: #eaecec;
@@ -383,8 +384,11 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 /*=============== TOP IMAGE===============*/
 .image__container {
   position: relative;
-  max-width:100%;
+  max-width:1440px;
+  margin: 0 auto;
+  width: 100%;
   height: 30vw;
+  max-height: 432px;
   overflow: hidden;
 }
 
@@ -405,6 +409,12 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
   font-size: 4vw;
   z-index: 2;
   /* order: 1; */
+}
+@media (min-width:1440px) {
+  .image__container  p {
+    font-size: 2.5rem;
+  }
+  
 }
 /* パソコン1280px以下のトップ画像レスポンシブ */
 @media (max-width:1280px) {
@@ -463,14 +473,16 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 /*=============== BODY ============= ==*/
 .main__container {
   text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
 
 }
 
 /*集会案内、宣教活動body*/
-.reihai, .denndou, .access{
+.reihai, .denndou, .access, .home{
   width: 90%;
   float: center;
-  /* max-width: 1440px; */
+  max-width: 1440px;
   margin:0 auto; /*左右に自動的にマージンを追加して中央に配置*/
   /* margin: 10px; */
   margin-top: 2%;
@@ -485,7 +497,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
  }
 
 @media (max-width:1024px) {
-  .reihai, .denndou, .access{
+  .reihai, .denndou, .access, .home{
     width: 100%;
     float: center;
     /* max-width: 1440px; */
@@ -503,7 +515,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
 
 
 @media (max-width:425px) {
-  .reihai, .denndou, .access{
+  .reihai, .denndou, .access, .home{
     width: 100%;
     float: center;
     /* max-width: 1440px; */
@@ -527,6 +539,7 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
  
  /*ホームbody*/
  .home {
+  max-width: 1440px;
   padding-top: 50px;
   padding-left: 100px;
   padding-right: 100px;
@@ -562,14 +575,46 @@ color: var(--white-color); /* カーソルを当てた時のテキストの色 *
     border-bottom:4px solid var(--border-color);
    }
    /* 大見出し */
-   h1 {
+   /* h1 {
     text-align: start;
     font-size: 3vw;
-    padding: 0.3em;/*文字周りの余白*/
-    /* color: #494949; */
-    background: var(--back-gray);/*背景色*/
-    border-left: solid 5px var(--border-color);/*左線（実線 太さ 色）*/
+    padding: 0.3em;/*文字周りの余白
+    /* color: #494949; 
+    background: var(--back-gray);/*背景色
+    border-left: solid 5px var(--border-color);/*左線（実線 太さ 色）
+  } */
+  h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    width: fit-content;
+    /* margin: auto; */
+    padding: 0.5em 1em;
+    margin-bottom: 0.3em;
+    text-align: start;
+    position: relative;
+    color: var(--black-color);
   }
+  h1::before,h1::after {
+    content:' ';
+    background-color: var(--border-color);
+    width: 50%;
+    height: 3px;
+    position: absolute;
+  }
+  h1::before {
+    top:0;
+    right: 0;
+  }
+  h1::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  @media (min-width:1440px) {
+    h1 {
+      font-size: 2rem;
+    }
+  } 
   /* 425px(Large Mobile)以下は見出しが小さくなりすぎるので修正*/
   @media (max-width:425px) {
     h1 {

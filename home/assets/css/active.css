@@ -1,4 +1,5 @@
 
+
   ul li {
     padding-right: 5px;
   }
@@ -11,9 +12,13 @@
 .slider {
   /* height: 53vw; */
   margin-inline: auto;
+ 
   overflow: hidden; /* 画像がはみ出ないようにする */
   /* width: 80vw; */
   width: 100%;
+}
+.act__box.t1 .slider, .act__box.t2 .slider {
+  border-radius: 1em; /*角丸める*/
 }
 .slick-img img {
   width: 100%;
@@ -30,12 +35,19 @@
   animation: zoomUp 10s linear 0s normal both;
 }
 /* slickここまで */
-
+.mikotoba .act__pic .slider {
+  /* height: 53vw; */
+  margin-inline: auto;
+  border-radius: 1em; /*角丸める*/
+  overflow: hidden; /* 画像がはみ出ないようにする */
+  /* width: 80vw; */
+  width: 100%;
+}
 
 
 
 /* 写真と文字のContainer */
-.act__box {
+.act__box, .mikotoba{
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -51,10 +63,9 @@
 }
 
 
-.act__pic {
+.act__box.t1 .act__pic, .act__box.t2 .act__pic{
   display: inline-block;
   vertical-align: middle;
-  overflow: hidden;
   position: relative;
   z-index: 1;
   width: 50%;
@@ -64,6 +75,74 @@
   /* background-color: blue; */
   /* 高さをディスプレイの高さの50%に設定 */
 /* height: 50vh; */
+}
+.act__box.t3 .act__pic {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  max-width: 700px;
+}
+
+.act__box.t3 .mikotoba__zoom.m1::before {
+  left: 0;
+  top: 20%;
+  vertical-align: middle;
+  content: ' 全世界に出て行き\Aすべての造られた者に\A福音を宣べ伝えなさい。\A';
+  white-space: pre;
+  position: absolute;
+  /* margin: 3%; */
+  text-align: center;
+  width: 100%;
+  font-size: 2.5vw;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+  z-index: 2;
+}
+.act__box.t3 .mikotoba__zoom.m1::before::after {
+  left: 0;
+  top: 20%;
+  vertical-align: middle;
+  content: 'ローマ人への手紙 10:14\A';
+  font-size: 1.5vw; /* 小さいサイズに指定 */
+  /* display: block; */
+  white-space: pre;
+  position: absolute;
+  /* margin: 3%; */
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+  z-index: 2;
+}
+
+.act__box.t3 .mikotoba__zoom.m2::before {
+  left: 0;
+  top: 30%;
+  vertical-align: middle;
+  content: 'この方以外には、\A誰によっても救いはありません。\A使徒の働き 4:12';
+  white-space: pre;
+  position: absolute;
+  /* margin: 3%; */
+  text-align: center;
+  width: 100%;
+  font-size: 2.5vw;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+  z-index: 2;
+}
+.mikotoba .act__pic {
+  display: inline-block;
+  vertical-align: middle;
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  /* height: 380px; */
+  /* max-width: 700px; */
 }
 .act__pic img {
   width: 100%;
@@ -83,6 +162,9 @@
   margin-top: -80px;
   overflow-y: hidden;
 }
+.act__box.t3 {
+  margin-top: 20px;
+}
 .act__box.t1 .act__pic {
   float: right;
   /* 30pxのオフセットを加えつつも横幅を保持 */
@@ -93,8 +175,8 @@
 .act__box.t2 .act__pic {
   float: left;
   /* 30pxのオフセットを加えつつも横幅を保持 */
-  margin-right: -30px;
-  width: calc(50% + 30px);
+  margin-right: -3%;
+  width: calc(50% + 3%);
 }
 
 
@@ -103,19 +185,14 @@
   float: left;
 }
 .act__box.t2 .act__textbox {
-  margin-top: 60px;
+  margin-top: 5%;
   float: right;
+  left: -2%;
 
 }
 
 .act__textbox .act__text{
   max-width: 100%;
-}
-
-
-.mikotoba .act__mikotoba {
-  max-width: 100%;
-  border-radius: 1em; /*角丸める*/
 }
 .mikotoba .slider {
   display: inline-block;
@@ -127,30 +204,61 @@
   text-align: center;
   border-radius: 1em; /*角丸める*/
 }
-.mikotoba .slider ,.slick-img{
+.mikotoba .act__pic {
  
   border-radius: 1em; /*角丸める*/
 }
+/* .mikotoba img {
+  position: relative;
+} */
+.mikotoba .seisyo__zoom::before{
+  left: 0;
+  vertical-align: middle;
+  content: ' 全世界に出て行き\Aすべての造られた者に\A福音を宣べ伝えなさい。';
+  white-space: pre;
+  position: absolute;
+  margin: 3%;
+  text-align: center;
+  width: 100%;
+  font-size: 2.5vw;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+  z-index: 10;
+}
+
+.seisyo {
+
+  text-align: center;
+  width: 100%;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', serif;
+
+}
 /* ********************** */
-.act__text .aaa {
+.act__text .seisyo__message {
   max-width: 100%;
 	opacity: 0;
 	transition-duration: 1s;
   overflow-wrap: break-word; /*文字が枠からはみ出ないように*/
 }
-.act__box.t1 .aaa{
+.act__box.t1 .seisyo__message{
 	/* background: #F2FDE8; */
 	/* border: 2px solid #459300; */
 	/* color: #459300; */
 	transform: translateX(-300px);
 }
-.act__box.t2 .aaa{
+.act__box.t2 .seisyo__message {
 	/* background: #FDE9EF; */
 	/* border: 2px solid #B5375D; */
 	/* color: #B5375D; */
+  /* text-align: center; */
+  margin-top: 10%;
+  font-size: 1.9vw;
+  
 	transform: translateX(300px);
 }
-.act__box.t1 .aaa.effect, .act__box.t2 .aaa.effect {
+.act__box.t1 .seisyo__message.effect, .act__box.t2 .seisyo__message.effect {
 	transform: translateX(0);
 	opacity: 1;
 }
@@ -174,18 +282,15 @@
   color: #d4d4d4;
   font-size:  4.3vw;
   font-weight: bold;
+  font-family: var(--body-font);
   text-transform: uppercase;
   content: 'ホームレス伝道';
   
   z-index: -1;
 }
-
-
-
-
 .rd__content {
   max-width: 100%;
-  background-color: blue;
+color: white;
   display: block;
   text-align: right;
   position: relative;
@@ -202,21 +307,28 @@
   max-width: 100%;
   position: absolute;
   /* margin: auto 0 0 auto; */
-  margin-top: 28%;
+  /* margin-top: 28%; */
   /* margin-left: 20%; */
   right: 0%;
   /* bottom: 100%; */
   left: -5%;
   /* transform: translateX(-50%); */
-  color: #d4d4d4;
+  /* color: rgba(0,0,0,0.6); */
+  color: white;
+  font-family: var(--body-font);
   font-size: 4.3vw;
   font-weight: bold;
   text-transform: uppercase;
   content: '路傍伝道';
   z-index: -1;
- 
-
 }
+
+@media (min-width:1440px) {
+  .rd__content::before, .hd__content::before {
+    font-size: 4rem;
+  }
+}
+
 .ddd {
   padding-top: 20%;
 }

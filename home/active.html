@@ -168,6 +168,7 @@
               },
             });
         });
+       
 
 
         $(function() {
@@ -190,12 +191,12 @@
 
               // 現在のスライドをフェードアウトして非表示にし、zoomクラスを削除
               // $active.fadeOut(2000).removeClass("zoom");
-              $active.fadeOut(2000, function() {
+              $active.fadeOut(4000, function() {
                 $(this).removeClass("zoom");
             });
 
               // 次のスライドをフェードインして表示し、zoomクラスを追加
-              $next.fadeIn(2000).addClass("zoom");
+              $next.fadeIn(3000).addClass("zoom");
           }, 10000); // タイマーの間隔（ミリ秒単位）を設定
       });
         $(function () {
@@ -301,10 +302,14 @@
 
       <!-- ###############CONTAINER############### -->
       <div class = "body__container">
-        <div class = "wrapper style">
+        <div class="image__container">
+          <img src="img/danntai.jpg" alt="">
+          <p>宣教活動</p>
+      </div>
+        <!-- <div class = "wrapper style">
             <div class = "blur style"></div>
             <p>宣教活動</p>
-            </div>
+            </div> -->
             <div class="denndou">               
 
                 <h1>宣教活動</h1>
@@ -335,7 +340,7 @@
 
                   <div class="aaa">
                     <div class="hd__content">
-                      <!-- 炊き出し伝道 -->
+                      <!-- ホームレス伝道 -->
                       
                       
                     </div>
@@ -369,11 +374,15 @@
               <div class="act__textbox">
                 <div class="act__text">
                   
-                  <div class="aaa">
-                    <div class="sss">sss</div>
-                    <div class="rd__content">
+                  <div class="seisyo__message" style="font-family: 'Noto Serif JP', serif; font-weight: bold;">
+                    <!-- しかし、信じたことのない方を、どのようにして呼び求めるのでしょうか。聞いたことのない方を、どのようにして信じるのでしょうか。 -->
+                      宣べ伝える人がいなければ、<br> どのようにして聞くのでしょうか。
+                      <br> ローマ人への手紙 10:14
+                    
+                      <div class="rd__content">
                       <!-- 路傍伝道 -->
                     </div>
+                    
                   </div>
 
                 </div>
@@ -384,14 +393,68 @@
             
             <!-- .act__box t2 ここまで -->
 
+
+             <!-- .act__box t3 ここから -->
+             <div class="act__box t3">
+              <!-- 사진 -->
+              <div class="act__pic">
+                <div class="slider">
+                  <div class="slick-img">
+                    <div class="mikotoba__zoom m1">
+                      <img src="img/sky2.jpg"alt="" />
+                    </div>
+                  </div>
+                  <div class="slick-img">
+                    <div class="mikotoba__zoom m2">
+                      <img src="img/sky2.jpg"alt="" />
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- text -->
+              <!-- <div class="act__textbox">
+                <div class="act__text">
+                  
+                  <div class="seisyo__message" style="font-family: 'Noto Serif JP', serif; font-weight: bold;">
+                     しかし、信じたことのない方を、どのようにして呼び求めるのでしょうか。聞いたことのない方を、どのようにして信じるのでしょうか。 
+                      宣べ伝える人がいなければ、<br> どのようにして聞くのでしょうか。
+                      <br> ローマ人への手紙 10:14
+                  </div>
+
+                </div>
+                </div> -->
+              
+              </div>
+              <!-- act__box t3 -->
+
               <!-- .act__box t1 -->
               <div class="mikotoba">
                 <!-- 사진 -->
-                <div class="act__mikotoba">
+                <div class="act__pic">
                   <div class="slider">
                     <div class="slick-img">
-                      <img src="img/rd1.jpg"alt="" />
+                      <div class="seisyo__zoom">
+                        <img src="img/sky2.jpg" alt="">
+                  
+                      </div>
+                      
                     </div>
+                    <div class="slick-img">
+                      <img src="img/sky2.jpg" alt="">
+                      
+                      <!-- <div class="seisyo">ローマ人への手紙 10:15</div> -->
+                    </div>
+                    
+                    <!-- <div class="slick-img">
+                      <div style='position: relative; width: 100%; height: 0; padding-top: 56.25%; overflow: hidden; will-change: transform;'>
+                        <iframe loading='lazy' style='position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;' src='https:&#x2F;&#x2F;www.miricanvas.com&#x2F;v&#x2F;12tdr7k?embed'>
+                        </iframe>
+                    </div>
+                    </div> -->
+                    <!-- <div class="slick-img">
+                      <img src="img/rd1.jpg"alt="" />
+                    </div> -->
                     <!-- <div class="slick-img">
                       <img src="img/rd2.jpg"alt="" />
                     </div>
@@ -423,7 +486,7 @@
 
 
 
-                <!-- 炊き出し伝道 -->
+                <!-- ホームレス伝道 -->
                 <!-- <h3>炊き出し伝道</h3>
                 <div class="pic__roll">
                     <ul class="denndou__slide" id="js-slider-3">
@@ -507,7 +570,7 @@
                      <ul class="foot__links">
                          <li><a href="https://www.youtube.com/@nagoyaic1320" target="_blank"><i class="ri-youtube-fill"></i> </a></li>
                          <li><a href=""><i class="ri-line-fill"></i></a></li>
-                         <li><a href=""><i class="ri-kakao-talk-fill"></i></a></li>
+                         <li><a href="https://open.kakao.com/me/nagoyainternational" target="_blank"><i class="ri-kakao-talk-fill"></i></a></li>
                     </ul>                             
          </div>  
      </footer>
